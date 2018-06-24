@@ -145,3 +145,9 @@ public struct Position: Hashable {
         return x * 1000 + y
     }
 }
+
+extension Position: CustomStringConvertible {
+    public var description: String {
+        return "(\(x), \(y))"
+    }
+}
