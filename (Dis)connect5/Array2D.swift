@@ -112,3 +112,36 @@ extension Array2D where T == Tile {
     }
 }
 
+public struct Position: Hashable {
+    public let x: Int
+    public let y: Int
+    
+    public static func ==(lhs: Position, rhs: Position) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+    
+    public func above() -> Position {
+        return Position(x, y - 1)
+    }
+    
+    public func below() -> Position {
+        return Position(x, y + 1)
+    }
+    
+    public func left() -> Position {
+        return Position(x - 1, y)
+    }
+    
+    public func right() -> Position {
+        return Position(x + 1, y)
+    }
+    
+    public init(_ x: Int, _ y: Int) {
+        self.x = x
+        self.y = y
+    }
+    
+    public var hashValue: Int {
+        return x * 1000 + y
+    }
+}
