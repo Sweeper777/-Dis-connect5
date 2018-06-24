@@ -105,3 +105,10 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         return indices
     }
 }
+
+extension Array2D where T == Tile {
+    public func indicesOf(tile: Tile) -> [Position] {
+        return self.indicesOf { $0 == tile }
+    }
+}
+
