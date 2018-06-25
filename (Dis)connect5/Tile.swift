@@ -11,3 +11,12 @@ public enum PlayerSides {
     case disconnect
 }
 
+public class Game: CustomStringConvertible {
+    let boardSize = 6
+    
+    var board: Array2D<Tile>
+    
+    public init() {
+        board = Array2D(columns: boardSize, rows: boardSize, initialValue: .empty)
+    }
+}
