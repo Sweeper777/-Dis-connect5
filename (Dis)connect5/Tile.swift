@@ -61,6 +61,16 @@ public class Game: CustomStringConvertible {
             }
             return false
         }
+        
+        for i in 0..<boardSize {
+            let column = (0..<boardSize).map { Position(i, $0) }
+            if fiveTilesInARow(positions: column) {
+                return .connect
+            }
+            let row = (0..<boardSize).map { Position($0, i) }
+            if fiveTilesInARow(positions: row) {
+                return .connect
+            }
     }
     
     public var description: String {
