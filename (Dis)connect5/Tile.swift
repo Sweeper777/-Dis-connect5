@@ -6,3 +6,8 @@ public enum Tile {
     case red
 }
 
+public enum PlayerSides {
+    case connect
+    case disconnect
+}
+
