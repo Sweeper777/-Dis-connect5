@@ -35,6 +35,34 @@ public class Game: CustomStringConvertible {
         }
     }
     
+    public func checkWinner() -> PlayerSides? {
+        func fiveTilesInARow(positions: [Position]) -> Bool {
+            if positions.count < 5 {
+                return false
+            }
+            let tiles = positions.map { self.board[$0] }
+            var currentTile: Tile = .red
+            var count = 0
+            loop: for tile in tiles {
+                switch tile {
+                case .empty:
+                    continue loop
+                default:
+                    if tile == currentTile {
+                        count += 1
+                        if count == 5 {
+                            return true
+                        }
+                    } else {
+                        count = 1
+                        currentTile = tile
+                    }
+                }
+            }
+            return false
+        }
+    }
+    
     public var description: String {
         var desc = ""
         for y in 0..<boardSize {
