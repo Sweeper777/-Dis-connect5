@@ -19,6 +19,22 @@ public class Game: CustomStringConvertible {
     public init() {
         board = Array2D(columns: boardSize, rows: boardSize, initialValue: .empty)
     }
+    
+    @discardableResult
+    public func placeTile(_ tile: Tile, at position: Position) -> Bool {
+        if tile == .empty {
+            return false
+        }
+        
+        switch board[position] {
+        case .empty:
+            board[position] = tile
+            return true
+        default:
+            return false
+        }
+    }
+    
     public var description: String {
         var desc = ""
         for y in 0..<boardSize {
