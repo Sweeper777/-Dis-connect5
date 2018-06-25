@@ -19,4 +19,21 @@ public class Game: CustomStringConvertible {
     public init() {
         board = Array2D(columns: boardSize, rows: boardSize, initialValue: .empty)
     }
+    public var description: String {
+        var desc = ""
+        for y in 0..<boardSize {
+            for x in 0..<boardSize {
+                switch board[x, y] {
+                case .empty:
+                    desc += "⚪️"
+                case .blue:
+                    desc += "🔵"
+                case .red:
+                    desc += "🔴"
+                }
+            }
+            desc += "\n"
+        }
+        return desc
+    }
 }
