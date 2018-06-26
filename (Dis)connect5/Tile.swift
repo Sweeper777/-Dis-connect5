@@ -71,6 +71,10 @@ public class Game: CustomStringConvertible {
             if fiveTilesInARow(positions: row) {
                 return .connect
             }
+            let forwardSlashDiagonal = (0..<boardSize).map { Position($0, i - $0) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
+            if fiveTilesInARow(positions: forwardSlashDiagonal) {
+                return .connect
+            }
     }
     
     public var description: String {
