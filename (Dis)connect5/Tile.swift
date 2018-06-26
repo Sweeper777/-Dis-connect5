@@ -81,6 +81,11 @@ public class Game: CustomStringConvertible {
             }
         }
         
+        if board.contains(.empty) {
+            return nil
+        } else {
+            return .disconnect
+        }
     }
     
     public var description: String {
