@@ -62,12 +62,12 @@ public class Game: CustomStringConvertible {
             return false
         }
         
-            let column = (0..<boardSize).map { Position(i, $0) }
         for i in (-boardSize + 1)..<boardSize {
+            let column = (0..<boardSize).map { Position(i, $0) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
             if fiveTilesInARow(positions: column) {
                 return .connect
             }
-            let row = (0..<boardSize).map { Position($0, i) }
+            let row = (0..<boardSize).map { Position($0, i) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
             if fiveTilesInARow(positions: row) {
                 return .connect
             }
