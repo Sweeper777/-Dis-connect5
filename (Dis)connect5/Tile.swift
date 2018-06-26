@@ -62,8 +62,8 @@ public class Game: CustomStringConvertible {
             return false
         }
         
-        for i in 0..<boardSize {
             let column = (0..<boardSize).map { Position(i, $0) }
+        for i in (-boardSize + 1)..<boardSize {
             if fiveTilesInARow(positions: column) {
                 return .connect
             }
