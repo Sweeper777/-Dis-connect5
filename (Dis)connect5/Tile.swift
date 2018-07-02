@@ -105,4 +105,13 @@ public class Game: CustomStringConvertible {
         }
         return desc
     }
+    
+    func getRows() -> [[Tile]] {
+        var retVal = [[Tile]]()
+        for i in (-boardSize + 1)..<boardSize {
+            let column = (0..<boardSize).map { Position(i, $0) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
+            
+        }
+        return retVal
+    }
 }
