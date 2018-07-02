@@ -111,6 +111,16 @@ public class Game: CustomStringConvertible {
         for i in (-boardSize + 1)..<boardSize {
             let column = (0..<boardSize).map { Position(i, $0) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
             
+            let row = (0..<boardSize).map { Position($0, i) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
+            let forwardSlashDiagonal = (0..<boardSize).map { Position($0, i - $0) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
+            let backSlashDiagonal = (0..<boardSize).map { Position($0, i + $0) }.filter { (0..<boardSize).contains($0.x) && (0..<boardSize).contains($0.y) }
+            
+            let columnTile = column.map { board[$0] }
+            let rowTile = row.map { board[$0] }
+            let fowardSlashDiagonalTile = forwardSlashDiagonal.map { board[$0] }
+            let backSlashDiagonalTile = backSlashDiagonal.map { board[$0] }
+            
+            retVal.append(contentsOf: [columnTile, rowTile, fowardSlashDiagonalTile, backSlashDiagonalTile])
         }
         return retVal
     }
