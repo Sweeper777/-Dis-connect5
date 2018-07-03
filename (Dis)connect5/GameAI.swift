@@ -27,4 +27,31 @@ class GameAI {
         }
     }
     
+    private func minimax(depth: Int, side: PlayerSides) -> (score: Int, position: Position, tile: Tile) {
+        var bestScore = side == mySide ? Int.min : Int.max
+        var currentScore: Int
+        var bestMove: (position: Position, tile: Tile)?
+        if game.checkWinner() != nil || depth == 0 {
+            bestScore = evaluateHeuristics()
+        } else {
+            for move in getAvailableMoves() {
+                game.board[move.position] = move.tile
+                if side == mySide {
+                    currentScore = minimax(depth: depth - 1, side: side.reversed()).score
+                    if currentScore > bestScore {
+                        bestScore = currentScore
+                        bestMove = move
+                    }
+                } else {
+                    currentScore = minimax(depth: depth - 1, side:  side.reversed()).score
+                    if currentScore < bestScore {
+                        bestScore = currentScore
+                        bestMove = move
+                    }
+                }
+                game.board[move.position] = .empty
+            }
+        }
+        return (bestScore, bestMove?.position ?? Position(0, 0), bestMove?.tile ?? .empty)
+    }
 }
