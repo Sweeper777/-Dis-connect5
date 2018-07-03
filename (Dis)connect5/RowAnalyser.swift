@@ -32,4 +32,13 @@ struct RowAnalyser {
         }
         return retVal
     }
+    
+    func analyse() -> Int {
+        let portions = [countPortion(of: .red), countPortion(of: .blue)].flatMap { $0 }
+        let connectablePortions = portions.filter { $0.length >= 5 }
+        if connectablePortions.isEmpty {
+            return 0
+        }
+        return connectablePortions.map { $0.tileCount }.reduce(0, +)
+    }
 }
