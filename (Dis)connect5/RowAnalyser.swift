@@ -11,4 +11,25 @@ struct PortionInfo {
 struct RowAnalyser {
     let row: [Tile]
     
+    func countPortion(of targetTile: Tile) -> [PortionInfo] {
+        var retVal = [PortionInfo]()
+        var currentCount = 0
+        var currentEmptyCount = 0
+        
+        for tile in row {
+            switch tile {
+            case .empty:
+                currentEmptyCount += 1
+                fallthrough
+            case targetTile:
+                currentCount += 1
+            default:
+                retVal.append(PortionInfo(tile: targetTile, length: currentCount, emptyCount: currentEmptyCount))
+            }
+        }
+        if currentCount != 0 {
+            retVal.append(PortionInfo(tile: targetTile, length: currentCount, emptyCount: currentEmptyCount))
+        }
+        return retVal
+    }
 }
