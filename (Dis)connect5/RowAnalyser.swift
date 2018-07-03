@@ -7,3 +7,8 @@ struct PortionInfo {
         return length - emptyCount
     }
 }
+
+struct RowAnalyser {
+    let row: [Tile]
+    
+}
