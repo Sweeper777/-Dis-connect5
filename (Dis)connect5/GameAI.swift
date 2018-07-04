@@ -58,4 +58,9 @@ class GameAI {
     func getAvailableMoves() -> [(position: Position, tile: Tile)] {
         return game.board.indicesOf(tile: .empty).flatMap { [($0, .red), ($0, .blue)] }
     }
+    
+    func getNextMove() -> (position: Position, tile: Tile) {
+        let result =  minimax(depth: 4, side: mySide)
+        return (result.position, result.tile)
+    }
 }
