@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4BC80820E374FE00435A03 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BC80720E374FE00435A03 /* GameAI.swift */; };
+		5A533DD320E8DA2800D3CFAB /* RowAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A533DD220E8DA2800D3CFAB /* RowAnalyser.swift */; };
 		5A95C36B20DF7EE200F1CE3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95C36A20DF7EE200F1CE3F /* AppDelegate.swift */; };
 		5A95C36D20DF7EE200F1CE3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95C36C20DF7EE200F1CE3F /* ViewController.swift */; };
 		5A95C37020DF7EE200F1CE3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A95C36E20DF7EE200F1CE3F /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A4BC80720E374FE00435A03 /* GameAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
+		5A533DD220E8DA2800D3CFAB /* RowAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowAnalyser.swift; sourceTree = "<group>"; };
 		5A95C36720DF7EE200F1CE3F /* (Dis)connect5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(Dis)connect5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A95C36A20DF7EE200F1CE3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A95C36C20DF7EE200F1CE3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				5A95C36E20DF7EE200F1CE3F /* Main.storyboard */,
 				5A95C37E20DF81A100F1CE3F /* Array2D.swift */,
 				5A95C37C20DF802700F1CE3F /* Tile.swift */,
+				5A4BC80720E374FE00435A03 /* GameAI.swift */,
+				5A533DD220E8DA2800D3CFAB /* RowAnalyser.swift */,
 				5A95C37120DF7EE500F1CE3F /* Assets.xcassets */,
 				5A95C37320DF7EE500F1CE3F /* LaunchScreen.storyboard */,
 				5A95C37620DF7EE500F1CE3F /* Info.plist */,
@@ -142,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A95C37D20DF802700F1CE3F /* Tile.swift in Sources */,
+				5A533DD320E8DA2800D3CFAB /* RowAnalyser.swift in Sources */,
 				5A95C37F20DF81A100F1CE3F /* Array2D.swift in Sources */,
 				5A95C36D20DF7EE200F1CE3F /* ViewController.swift in Sources */,
+				5A4BC80820E374FE00435A03 /* GameAI.swift in Sources */,
 				5A95C36B20DF7EE200F1CE3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
