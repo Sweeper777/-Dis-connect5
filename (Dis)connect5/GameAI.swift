@@ -54,4 +54,8 @@ class GameAI {
         }
         return (bestScore, bestMove?.position ?? Position(0, 0), bestMove?.tile ?? .empty)
     }
+    
+    func getAvailableMoves() -> [(position: Position, tile: Tile)] {
+        return game.board.indicesOf(tile: .empty).flatMap { [($0, .red), ($0, .blue)] }
+    }
 }
